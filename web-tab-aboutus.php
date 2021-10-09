@@ -1,5 +1,82 @@
 <?php 
 
+require_once 'db.php';
+
+$name = '' ;
+$email = '';
+$contact = '';
+$message = '';
+
+if( $_SERVER['REQUEST_METHOD'] == 'POST'){
+
+  $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+  
+  $name = trim($_POST['name']);
+  $email = trim($_POST['email']);
+  $contact = trim($_POST['contact']);
+  $message = trim($_POST['message']);
+
+  if(empty($name)){
+    $name_err = 'Please enter your name';
+  }
+
+
+  if(empty($email)){
+    $email_err = 'Please enter email address'; 
+  } 
+/*
+  else {
+    $sql = 'SELECT id FROM users WHERE email = :email';
+
+    if( $stmt = $pdo->prepare($sql)){
+      $stmt->bindParam(':email', $email, PDO::PARAM_STR);
+
+      if($stmt->execute()){
+        if($stmt->rowCount() === 1){
+          $email_err = 'Email is already taken';
+        }
+      }else{
+        die('Something went wrong');
+      }
+    }
+  }
+*/
+
+  if(empty($contact)){
+    $contact_err = 'Please enter your contact number';
+  } 
+
+  if(empty($message)){
+    $message_err = 'Please provide a message';
+  } 
+
+  //inputs are okay to be saved to the database
+  if( empty($name_err) &&
+      empty($email_err) &&
+      empty($contact_err) &&
+      empty($message_err))
+  {
+      $sql = 'INSERT INTO users (name, email, contact, message) VALUES (:name, :email, :contact, :message)';
+
+      if( $stmt = $pdo->prepare($sql)){
+        $stmt->bindParam(':name', $name, PDO::PARAM_STR);
+        $stmt->bindParam(':email', $email, PDO::PARAM_STR);
+        $stmt->bindParam(':contact', $contact, PDO::PARAM_STR);
+		$stmt->bindParam(':message', $message, PDO::PARAM_STR);
+
+        if( $stmt->execute()){
+            echo "<font color='green'> Send Successfully.";
+        } 
+		/*
+		else {
+          die('Something went wrong');
+        }
+		*/
+      }
+  }
+  
+}
+
 ?>
 
 <html> 
@@ -24,6 +101,19 @@
   		background-color: white; /* For browsers that do not support gradients */
   		background-image: linear-gradient(white, #0275d8);
 		}
+	#gradbg-bw-rad {
+		padding: 30px;
+		background-color: blue; 
+		background-image: linear-gradient(#0275d8, white);
+		border-radius: 30px;
+	}
+	#skybluebg {
+		background-color: #99ccff;
+		border-radius: 30px;
+	}
+	#aquabluebg {
+		border-radius: 30px;
+	}
 </style>
 
 </head> 
@@ -77,36 +167,54 @@
 		</nav>
     </header>
 
-    <div class="main-wrapper" id="gradbg-wb">
-	    <section class="cta-section py-5">
-		    <div class="container text-center">
-			    <h2 class="heading"><small>The Official Website of Ramon V. Mitra Jr. Sports Complex</small><br>Sports and Fitness Park</h2>
-			    <div class="intro">Puerto Princesa City, Palawan</div>
-		    </div><!--//container-->
-	    </section>
-	    <section class="blog-list px-3 py-5 p-md-5">
-			<div class="border border-top-0 border-left-0 border-right-0 pl-3 mb-5">
-			</div><!--Sports Facility-->
-		    <div class="container">
-			    
-				<div class="item mb-5">
-				    <div class="media">
-					    <img class="mr-3 img-fluid post-thumb d-none d-md-flex border border-light" src="assets/images/blog/iHELP_portrait.png" alt="image">
-					    <div class="media-body">
-						    <h3 class="title mb-1"><a href="thesis-post-04.php">The iHELP mobile application</a></h3>
-							<div class="mb-1"><span class="tags">Tags: </span><span class="tag-word"><a href="#">mobile</a>, <a href="#">development</a>, <a href="#">application</a></span></div>
-							<div class="meta mb-1"><span class="date">Posted 4 days ago by admin</span><span class="comment"><a href="#">2 comments</a></span></div>
-						    <div class="intro">iHELP: information about Health Advisory of COVID-19,
-								Emergency Call Hotlines, Learning First-Aid, and Preparedness in Disaster and Emergency.
-								The iHELP aims to keep you ready and prepare for any disaster. It is your Healthcare and Emergency Companion. SIMPLE, EASY, and CONVENIENT...</div>
-						    <a class="more-link" href="thesis-post-04.php">Read more &rarr;</a>
-					    </div><!--//media-body-->
-				    </div><!--//media-->
-			    </div><!--//item-->
-				
-		    </div>
-	    </section>
-	    
+    <div class="main-wrapper" id="gradbg-wb"><!--Gradient Background-->
+	<div class="mt-5 mb-5 ml-5 mr-5" id="gradbg-bw-rad"><!--Foreground-->
+	<div class="col-sm-12" style="padding-right: 5px; padding-left: 5px;">
+          
+        <div class="card-group">    
+            <div class="card card-body mt-3 mb-3 ml-3 mr-3" id="aquabluebg">
+				<h2>About Us</h2>
+				<br>
+        		<h2><small>Our <strong>Mission</strong> is to provide everyone from first-time participants to professional athletes with the real-time technology hassle-free service.</small></h2>
+				<br>
+				<h2><small>Our <strong>Vision</strong> is to be the primary leading sports scheduling system in the city, fueled by inspiring athletic people by achieving enjoyment and fitness.</small></h2>
+            </div>
+            <br>
+            <div class="card card-body mt-3 mb-3 ml-3 mr-3" id="skybluebg">
+        	<h2>Contact Us</h2>
+        	<p>Please leave us a message :)</p>
+          	<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+            <div class="form-group">
+                <label>Name:<sup>*</sup></label>
+                <input type="text" name="name" class="form-control form-control-lg <?php echo (!empty($name_err)) ? 'is-invalid' : '';?>" value="<?php echo $name;?>">
+                <span class="invalid-feedback"><?php echo $name_err; ?></span>
+            </div> 
+            <div class="form-group">
+                <label>Email Address:<sup>*</sup></label>
+                <input type="email" name="email" class="form-control form-control-lg <?php echo (!empty($email_err)) ? 'is-invalid' : '';?> " value="<?php echo $email;?> ">
+                <span class="invalid-feedback"><?php echo $email_err; ?></span>
+            </div>    
+            <div class="form-group">
+                <label>Contact Number:<sup>*</sup></label>
+                <input type="text" name="contact" class="form-control form-control-lg <?php echo (!empty($contact_err)) ? 'is-invalid' : '';?>" value="<?php echo $contact;?>">
+                <span class="invalid-feedback"><?php echo $contact_err; ?></span>
+            </div>
+            <div class="form-group">
+                <label>Message:<sup>*</sup></label>
+                <textarea type="text" name="message" class="form-control form-control-lg <?php echo (!empty($message_err)) ? 'is-invalid' : '';?>" value="<?php echo $message;?>"></textarea>
+                <span class="invalid-feedback"><?php echo $message_err; ?></span>
+            </div>
+
+            <div class="form-row ml-3 mr-3">
+              <div class="col">
+                <input type="submit" class="btn btn-primary btn-block" value="Submit">
+              </div> 
+            </div>
+          	</form>
+        	</div>
+		</div>
+	</div><!--//Foreground-->	
+	</div><!--//Gradient Background-->    
 	    <footer class="footer text-center py-2 theme-bg-dark">
 		   
 	    <small class="copyright">BSIT 4th Year |<a href="http://anselmolupague.neocities.org/" target="_blank"> RVMSC SchedSys</a> | ©2020 All Rights Reserved.</small>
