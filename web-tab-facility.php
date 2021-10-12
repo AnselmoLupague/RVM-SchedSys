@@ -91,6 +91,11 @@
     font-size: 1em;
     margin-top: 0.25em;
 }
+	#gradbg-wb {
+  		background-color: white; /* For browsers that do not support gradients */
+  		background-image: linear-gradient(white, #0275d8);
+		}
+
 </style>
 
 </head> 
@@ -150,7 +155,6 @@
 			    <div class="intro">Puerto Princesa City, Palawan</div>
 		    </div><!--//container-->
 	    </section>
-
 	    <section class="blog-list px-3 py-5 p-md-5">
 			<div class="border border-top-0 border-left-0 border-right-0 pl-3 mb-5">
 			</div><!--Sports Facility-->
