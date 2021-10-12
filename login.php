@@ -58,7 +58,8 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-  <title>Account Login</title>
+    <link rel="shortcut icon" href="assets/images/ppc-logo.png"> 
+  <title>RVMSC SchedSys | Login</title>
 </head>
 <body style="background-image: url('assets/images/rvmsc_image00.jpg'); 
       background-repeat: no-repeat;

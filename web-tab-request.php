@@ -1,16 +1,10 @@
 <?php 
-//initialize session
-  session_start();
 
-  if( !isset($_SESSION['email']) || empty($_SESSION['email'])){
-    header('location: login.php');
-    exit;
-  }
 ?>
 
 <html> 
 <head>
-    <title>City Sports Complex | Home</title>
+    <title>City Sports Complex | Request</title>
 
     <!-- Meta -->
     <meta charset="utf-8">
@@ -53,9 +47,10 @@
 				</div><!--//profile-section-->
 				
 				<ul class="navbar-nav flex-column text-left">
-					<li class="nav-item active">
-					    <a class="nav-link" i="fa" href="index.php"><i class="fa fa-home"></i> Home<span class="sr-only">(current)</span></a>
+					<li class="nav-item">
+					    <a class="nav-link" href="index.php"><i class="fa fa-home"></i> Home<span class="sr-only"></span></a>
 					</li>
+
 					<li class="nav-item">
 					    <a class="nav-link" href="web-tab-facility.php"><i class="fa fa-building"></i>	Facility<span class="sr-only"></span></a>
 					</li>
@@ -64,8 +59,8 @@
 					    <a class="nav-link" href="web-tab-schedules.php"><i class="fa fa-calendar"></i>	Schedules<span class="sr-only"></span></a>
 					</li>
 
-					<li class="nav-item">
-					    <a class="nav-link" href="web-tab-request.php"><i class="fa fa-envelope"></i>	Request<span class="sr-only"></span></a>
+					<li class="nav-item active">
+					    <a class="nav-link" i="fa" href="web-tab-request.php"><i class="fa fa-envelope"></i>	Request<span class="sr-only">(current)</span></a>
 					</li>
 
 					<li class="nav-item">

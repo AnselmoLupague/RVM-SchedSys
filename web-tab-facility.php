@@ -1,16 +1,10 @@
 <?php 
-//initialize session
-  session_start();
 
-  if( !isset($_SESSION['email']) || empty($_SESSION['email'])){
-    header('location: login.php');
-    exit;
-  }
 ?>
 
 <html> 
 <head>
-    <title>City Sports Complex | Home</title>
+    <title>City Sports Complex | Facility</title>
 
     <!-- Meta -->
     <meta charset="utf-8">
@@ -26,10 +20,77 @@
 	<link id="theme-style" rel="stylesheet" href="assets/css/style.css">
 
 	<style>
-	#gradbg-wb {
+#gradbg-wb {
   		background-color: white; /* For browsers that do not support gradients */
   		background-image: linear-gradient(white, #0275d8);
 		}
+.card{
+    width: 30%;
+    height: 40%;
+    border-radius: 30px;
+    display: inline-block;
+}
+.card-tittle{
+    font-family: 'Quicksand', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5em;  
+}
+.image {
+    width: 100%;
+}
+
+.image__img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+}
+
+.image__overlay {
+    border-radius: 30px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 115%;
+    background-attachment: fixed;
+    color: #ffffff;
+    font-family: 'Quicksand', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.25s;
+}
+
+.image__overlay--blur {
+    backdrop-filter: blur(5px);
+}
+
+.image__overlay--primary {
+    background: #001aff;
+}
+
+.image__overlay > * {
+    transform: translateY(20px);
+    transition: transform 0.25s;
+}
+
+.image__overlay:hover {
+    opacity: .8;
+}
+
+.image__overlay:hover > * {
+    transform: translateY(0);
+}
+.image__description {
+    font-size: 1em;
+    margin-top: 0.25em;
+}
 </style>
 
 </head> 
@@ -53,11 +114,11 @@
 				</div><!--//profile-section-->
 				
 				<ul class="navbar-nav flex-column text-left">
-					<li class="nav-item active">
-					    <a class="nav-link" i="fa" href="index.php"><i class="fa fa-home"></i> Home<span class="sr-only">(current)</span></a>
-					</li>
 					<li class="nav-item">
-					    <a class="nav-link" href="web-tab-facility.php"><i class="fa fa-building"></i>	Facility<span class="sr-only"></span></a>
+					    <a class="nav-link" href="index.php"><i class="fa fa-home"></i> Home<span class="sr-only"></span></a>
+					</li>
+					<li class="nav-item active">
+					    <a class="nav-link" i="fa" href="web-tab-facility.php"><i class="fa fa-building"></i>	Facility<span class="sr-only">(current)</span></a>
 					</li>
 
 					<li class="nav-item">
@@ -89,27 +150,73 @@
 			    <div class="intro">Puerto Princesa City, Palawan</div>
 		    </div><!--//container-->
 	    </section>
+
 	    <section class="blog-list px-3 py-5 p-md-5">
 			<div class="border border-top-0 border-left-0 border-right-0 pl-3 mb-5">
 			</div><!--Sports Facility-->
 		    <div class="container">
-			    
-				<div class="item mb-5">
-				    <div class="media">
-					    <img class="mr-3 img-fluid post-thumb d-none d-md-flex border border-light" src="assets/images/blog/iHELP_portrait.png" alt="image">
-					    <div class="media-body">
-						    <h3 class="title mb-1"><a href="thesis-post-04.php">The iHELP mobile application</a></h3>
-							<div class="mb-1"><span class="tags">Tags: </span><span class="tag-word"><a href="#">mobile</a>, <a href="#">development</a>, <a href="#">application</a></span></div>
-							<div class="meta mb-1"><span class="date">Posted 4 days ago by admin</span><span class="comment"><a href="#">2 comments</a></span></div>
-						    <div class="intro">iHELP: information about Health Advisory of COVID-19,
-								Emergency Call Hotlines, Learning First-Aid, and Preparedness in Disaster and Emergency.
-								The iHELP aims to keep you ready and prepare for any disaster. It is your Healthcare and Emergency Companion. SIMPLE, EASY, and CONVENIENT...</div>
-						    <a class="more-link" href="thesis-post-04.php">Read more &rarr;</a>
-					    </div><!--//media-body-->
-				    </div><!--//media-->
-			    </div><!--//item-->
-				
-		    </div>
+
+                    <div class="card">
+                    <div class="card-tittle">Volleyball Court</div>
+                    <div class="image">
+                    <img class="image__img" src="assets/images/ppc rvm csc volleyball court.jpg" alt="image">
+                    <div class="image__overlay image__overlay--primary">
+                    <p class="image__description">Here is the Volleyball court</p>
+                    </div>
+                    </div>
+                    </div>
+
+                    <div class="card mr-3 ml-3">
+                    <div class="card-tittle">Basketball Court</div>
+                    <div class="image">
+                    <img class="image__img" src="assets/images/ppc rvm csc basketball court.jpg" alt="image">
+                    <div class="image__overlay image__overlay--primary">
+                    <p class="image__description">Here is the Basketball Court</p>
+                    </div>
+                    </div>
+                    </div>
+
+                    <div class="card">
+                    <div class="card-tittle">Swimming Pool</div>
+                    <div class="image">
+                    <img class="image__img" src="assets/images/ppc rvm csc swimming pool.jpg" alt="image">
+                    <div class="image__overlay image__overlay--primary">
+                    <p class="image__description">Here is the Swimming Pool</p>
+                    </div>
+                    </div>
+                    </div>
+                    
+                    <div class="card">
+                    <div class="card-tittle">Volleyball Court</div>
+                    <div class="image">
+                    <img class="image__img" src="assets/images/Ramon_V._Mitra,_Jr._Sports_Complex.jpg" alt="image">
+                    <div class="image__overlay image__overlay--primary">
+                    <p class="image__description">Here is the Soccer field</p>
+                    </div>
+                    </div>
+                    </div>
+
+                    <div class="card mr-3 ml-3 mt-5">
+                    <div class="card-tittle">Fitness Facility</div>
+                    <div class="image">
+                    <img class="image__img" src="assets/images/ppc rvm csc fitness facility.jpg" alt="image">
+                    <div class="image__overlay image__overlay--primary">
+                    <p class="image__description">Here is the Fitness facility</p>
+                    </div>
+                    </div>
+                    </div>
+
+                    <div class="card">
+                    <div class="card-tittle">Tracks</div>
+                    <div class="image">
+                    <img class="image__img" src="assets/images/ppc rvm csc track and field.jpg" alt="image">
+                    <div class="image__overlay image__overlay--primary">
+                    <p class="image__description">Here are the Tracks</p>
+                    </div>
+                    </div>
+                    </div>
+
+			</div>
 	    </section>
 	    
 	    <footer class="footer text-center py-2 theme-bg-dark">
