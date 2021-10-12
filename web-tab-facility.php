@@ -26,7 +26,7 @@
 		}
 .card{
     width: 30%;
-    height: 40%;
+    height: 50%;
     border-radius: 30px;
     display: inline-block;
 }
@@ -40,12 +40,17 @@
 }
 .image {
     width: 100%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .image__img {
     display: block;
-    width: 100%;
-    height: 100%;
+    width: 90%;
+    height: 85%;
     border-radius: 30px;
 }
 
@@ -55,7 +60,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 115%;
+    height: 100%;
     background-attachment: fixed;
     color: #ffffff;
     font-family: 'Quicksand', sans-serif;
@@ -91,6 +96,11 @@
     font-size: 1em;
     margin-top: 0.25em;
 }
+	#gradbg-wb {
+  		background-color: white; /* For browsers that do not support gradients */
+  		background-image: linear-gradient(white, #0275d8);
+		}
+
 </style>
 
 </head> 
@@ -150,7 +160,6 @@
 			    <div class="intro">Puerto Princesa City, Palawan</div>
 		    </div><!--//container-->
 	    </section>
-
 	    <section class="blog-list px-3 py-5 p-md-5">
 			<div class="border border-top-0 border-left-0 border-right-0 pl-3 mb-5">
 			</div><!--Sports Facility-->
