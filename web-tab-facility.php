@@ -42,13 +42,25 @@
 .image {
     width: 100%;
     height: 90%;
+<<<<<<< HEAD
+=======
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+>>>>>>> c4c994852a9a853b01927664bff74e5fb55572f5
 }
 
 .image__img {
     display: block;
+<<<<<<< HEAD
     position: absolute;
     width: 100%;
     height: 88%;
+=======
+    width: 90%;
+    height: 85%;
+>>>>>>> c4c994852a9a853b01927664bff74e5fb55572f5
     border-radius: 30px;
 }
 
