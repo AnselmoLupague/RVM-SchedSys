@@ -24,80 +24,26 @@
   		background-color: white; /* For browsers that do not support gradients */
   		background-image: linear-gradient(white, #0275d8);
 		}
-.card{
-    width: 30%;
-    height: 50%;
-    border-radius: 30px;
-    display: inline-block;
 }
-.card-tittle{
-    color: #000000;
-    font-family: 'Quicksand', sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5em;  
-}
-.image {
-    width: 100%;
-    height: 90%;
-}
-
-.image__img {
-    display: block;
-    position: absolute;
-    width: 100%;
-    height: 88%;
-    border-radius: 30px;
-}
-
-.image__overlay {
-    border-radius: 30px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-attachment: fixed;
-    color: #ffffff;
-    font-family: 'Quicksand', sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transition: opacity 0.25s;
-}
-
-.image__overlay--blur {
-    backdrop-filter: blur(5px);
-}
-
-.image__overlay--primary {
-    background: #001aff;
-}
-
-.image__overlay > * {
-    transform: translateY(20px);
-    transition: transform 0.25s;
-}
-
-.image__overlay:hover {
-    opacity: .8;
-}
-
-.image__overlay:hover > * {
-    transform: translateY(0);
-}
-.image__description {
-    font-size: 1em;
-    margin-top: 0.25em;
-}
-	#gradbg-wb {
+#gradbg-wb {
   		background-color: white; /* For browsers that do not support gradients */
   		background-image: linear-gradient(white, #0275d8);
 		}
+
+.image__img {
+    width: 100%;
+    height: 80%;
+}
+
+.card-tittle{
+    font-family: 'Quicksand';
+    display: flex;
+    color: #000000;
+    flex-direction: column;
+    align-items: center;
+    font-size: 2em;  
+}
+
 
 </style>
 
@@ -152,79 +98,14 @@
     </header>
 
     <div class="main-wrapper" id="gradbg-wb">
-	    <section class="cta-section py-5">
-		    <div class="container text-center">
-			    <h2 class="heading"><small>The Official Website of Ramon V. Mitra Jr. Sports Complex</small><br>Sports and Fitness Park</h2>
-			    <div class="intro">Puerto Princesa City, Palawan</div>
-		    </div><!--//container-->
-	    </section>
-	    <section class="blog-list px-3 py-5 p-md-5">
-			<div class="border border-top-0 border-left-0 border-right-0 pl-3 mb-5">
-			</div><!--Sports Facility-->
-		    <div class="container">
+        <div class="card-group">    
+        <div class="card card-body mt-5 mb-5 ml-5 mr-5" id="aquabluebg">
+        <div style="text-align:right;"><a href="web-tab-facility.php"><i class="fa fa-times-circle"></i></a></div>
+        <div class="card-tittle">Volleyball Court</div>
+        <img class="image__img" src="assets/images/ppc rvm csc volleyball court.jpg" alt="image">
 
-                    <div class="card">
-                    <div class="card-tittle">Volleyball Court</div>
-                    <div class="image">
-                    <a  href="volleyball.php">
-                    <img class="image__img" src="assets/images/ppc rvm csc volleyball court.jpg" alt="image">
-                    </a>
-                    </div>
-                    </div>
-                    
-
-                    <div class="card mr-3 ml-3">
-                    <div class="card-tittle">Basketball Court</div>
-                    <div class="image">
-                    <img class="image__img" src="assets/images/ppc rvm csc basketball court.jpg" alt="image">
-                    <div class="image__overlay image__overlay--primary">
-                    <p class="image__description">Here is the Basketball Court</p>
-                    </div>
-                    </div>
-                    </div>
-
-                    <div class="card">
-                    <div class="card-tittle">Swimming Pool</div>
-                    <div class="image">
-                    <img class="image__img" src="assets/images/ppc rvm csc swimming pool.jpg" alt="image">
-                    <div class="image__overlay image__overlay--primary">
-                    <p class="image__description">Here is the Swimming Pool</p>
-                    </div>
-                    </div>
-                    </div>
-                    
-                    <div class="card">
-                    <div class="card-tittle">Volleyball Court</div>
-                    <div class="image">
-                    <img class="image__img" src="assets/images/Ramon_V._Mitra,_Jr._Sports_Complex.jpg" alt="image">
-                    <div class="image__overlay image__overlay--primary">
-                    <p class="image__description">Here is the Soccer field</p>
-                    </div>
-                    </div>
-                    </div>
-
-                    <div class="card mr-3 ml-3 mt-5">
-                    <div class="card-tittle">Fitness Facility</div>
-                    <div class="image">
-                    <img class="image__img" src="assets/images/ppc rvm csc fitness facility.jpg" alt="image">
-                    <div class="image__overlay image__overlay--primary">
-                    <p class="image__description">Here is the Fitness facility</p>
-                    </div>
-                    </div>
-                    </div>
-
-                    <div class="card">
-                    <div class="card-tittle">Tracks</div>
-                    <div class="image">
-                    <img class="image__img" src="assets/images/ppc rvm csc track and field.jpg" alt="image">
-                    <div class="image__overlay image__overlay--primary">
-                    <p class="image__description">Here are the Tracks</p>
-                    </div>
-                    </div>
-                    </div>
-
-			</div>
-	    </section>
+    </div>
+    </div>
 	    
 	    <footer class="footer text-center py-2 theme-bg-dark">
 		   
