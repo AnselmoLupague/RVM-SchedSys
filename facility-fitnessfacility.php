@@ -18,17 +18,32 @@
     <!-- Theme CSS -->  
 	<link id="theme-style" rel="stylesheet" href="assets/css/theme-3.css">
 	<link id="theme-style" rel="stylesheet" href="assets/css/style.css">
-	<link id="theme-style" rel="stylesheet" href="assets/css/facility.css">
 
 	<style>
 #gradbg-wb {
   		background-color: white; /* For browsers that do not support gradients */
   		background-image: linear-gradient(white, #0275d8);
 		}
+}
 #gradbg-wb {
   		background-color: white; /* For browsers that do not support gradients */
   		background-image: linear-gradient(white, #0275d8);
 		}
+
+.image__img {
+    width: 100%;
+    height: 80%;
+}
+
+.card-tittle{
+    font-family: 'Quicksand';
+    display: flex;
+    color: #000000;
+    flex-direction: column;
+    align-items: center;
+    font-size: 2em;  
+}
+
 
 </style>
 
@@ -83,75 +98,14 @@
     </header>
 
     <div class="main-wrapper" id="gradbg-wb">
-	    <section class="cta-section py-5">
-		    <div class="container text-center">
-			    <h2 class="heading"><small>The Official Website of Ramon V. Mitra Jr. Sports Complex</small><br>Sports and Fitness Park</h2>
-			    <div class="intro">Puerto Princesa City, Palawan</div>
-		    </div><!--//container-->
-	    </section>
-	    <section class="blog-list px-3 py-5 p-md-5">
-			<div class="border border-top-0 border-left-0 border-right-0 pl-3 mb-5">
-			</div><!--Sports Facility-->
-		    <div class="container">
+        <div class="card-group">    
+        <div class="card card-body mt-5 mb-5 ml-5 mr-5" id="aquabluebg">
+        <div style="text-align:right;"><a href="web-tab-facility.php"><i class="fa fa-times-circle"></i></a></div>
+        <div class="card-tittle">Fitness Facility</div>
+        <img class="image__img" src="assets/images/ppc rvm csc fitness facility.jpg" alt="image">
 
-                    <div class="card">
-                    <div class="card-tittle">Volleyball Court</div>
-                    <div class="image">
-                    <a  href="facility-volleyball.php">
-                    <img class="image__img" src="assets/images/facilities/volleyball court.jpg" alt="image">
-                    </a>
-                    </div>
-                    </div>
-                    
-
-                    <div class="card mr-3 ml-3 mb-3">
-                    <div class="card-tittle">Basketball Court</div>
-                    <div class="image">
-                    <a  href="facility-basketball.php">
-                    <img class="image__img" src="assets/images/facilities/basketball court.jpg" alt="image">
-                    </a>
-                    </div>
-                    </div>
-
-                    <div class="card">
-                    <div class="card-tittle">Fitness Facility</div>
-                    <div class="image">
-                    <a  href="facility-fitnessfacility.php">
-                    <img class="image__img" src="assets/images/facilities/fitness facility.jpg" alt="image">
-                    </a>
-                    </div>
-                    </div>
-                    
-                    <div class="card">
-                    <div class="card-tittle">Soccer Field</div>
-                    <div class="image">
-                    <a  href="facility-soccerfield.php">
-                    <img class="image__img" src="assets/images/facilities/soccer field.jpg" alt="image">
-                    </a>
-                    </div>
-                    </div>
-                    
-
-                    <div class="card mr-3 ml-3 mb-3">
-                    <div class="card-tittle">Swimming Pool</div>
-                    <div class="image">
-                    <a  href="facility-swimmingpool.php">
-                    <img class="image__img" src="assets/images/facilities/swimming pool.jpg" alt="image">
-                    </a>
-                    </div>
-                    </div>
-
-                    <div class="card">
-                    <div class="card-tittle">Track and Field</div>
-                    <div class="image">
-                    <a  href="facility-trackandfield.php">
-                    <img class="image__img" src="assets/images/facilities/track and field.jpg" alt="image">
-                    </a>
-                    </div>
-                    </div>
-
-			</div>
-	    </section>
+    </div>
+    </div>
 	    
 	    <footer class="footer text-center py-2 theme-bg-dark">
 		   
