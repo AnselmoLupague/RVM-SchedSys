@@ -188,7 +188,7 @@ img {vertical-align: middle;}
 <div class="mySlides fade">
   <div class="numbertext">3 / 3</div>
   <img src="assets\images\tandikan.jpeg" style="width:100%">
-  <div class="text">Caption Three</div>
+  <div class="text">Tandikan</div>
 </div>
 
 </div>
