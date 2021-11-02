@@ -169,7 +169,7 @@ img {vertical-align: middle;}
 		    <div class="container">
 			    
 			<h2>Automatic Slideshow</h2>
-<p>Change image every 2 seconds:</p>
+      <p>Change image every 20 seconds:</p>
 
 <div class="slideshow-container">
 
