@@ -38,7 +38,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 * {box-sizing: border-box;}
-body {font-family: Verdana, sans-serif;}
+body 
 .mySlides {display: none;}
 img {vertical-align: middle;}
 
@@ -84,10 +84,6 @@ img {vertical-align: middle;}
   border-radius: 50%;
   display: inline-block;
   transition: background-color 0.6s ease;
-}
-
-.active {
-  background-color: #717171;
 }
 
 /* Fading animation */
@@ -168,38 +164,37 @@ img {vertical-align: middle;}
 			</div><!--Sports Facility-->
 		    <div class="container">
 			    
-			<h2>Automatic Slideshow</h2>
-      <p>Change image every 20 seconds:</p>
+
 
 <div class="slideshow-container">
 
 <div class="mySlides fade">
   <div class="numbertext">1 / 5</div>
-  <img src="assets\images\its more fun in ppc city hall.jpeg" style="width:100%">
+  <img src="assets\images\its more fun in ppc city hall.jpg" style="width:100%">
   <div class="text">City Hall</div>
 </div>
 
 <div class="mySlides fade">
   <div class="numbertext">2 / 5</div>
-  <img src="assets\images\yate view.jpeg" style="width:100%">
+  <img src="assets\images\yate view.jpg" style="width:100%">
   <div class="text">Yate View</div>
 </div>
 
 <div class="mySlides fade">
   <div class="numbertext">3 / 5</div>
-  <img src="assets\images\tandikan.jpeg" style="width:100%">
+  <img src="assets\images\tandikan.jpg" style="width:100%">
   <div class="text">Tandikan</div>
 </div>
 
 <div class="mySlides fade">
   <div class="numbertext">4 / 5</div>
-  <img src="assets\images\palawan flycatcher1.jpeg" style="width:100%">
+  <img src="assets\images\palawan flycatcher1.jpg" style="width:100%">
   <div class="text">Palawan Flycatcher</div>
 </div>
 
 <div class="mySlides fade">
   <div class="numbertext">5 / 5</div>
-  <img src="assets\images\underground river.jpeg" style="width:100%">
+  <img src="assets\images\underground river.jpg" style="width:100%">
   <div class="text">Underground River</div>
 </div>
 
