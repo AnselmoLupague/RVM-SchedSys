@@ -175,19 +175,19 @@ img {vertical-align: middle;}
 
 <div class="mySlides fade">
   <div class="numbertext">1 / 3</div>
-  <img src="assets/images/its more fun in ppc city hall.jpeg" style="width:100%">
+  <img src="assets\images\its more fun in ppc city hall.jpeg" style="width:100%">
   <div class="text">City Hall</div>
 </div>
 
 <div class="mySlides fade">
   <div class="numbertext">2 / 3</div>
-  <img src="img_snow_wide.jpg" style="width:100%">
-  <div class="text">Caption Two</div>
+  <img src="assets\images\yate view.jpeg" style="width:100%">
+  <div class="text">Yate View</div>
 </div>
 
 <div class="mySlides fade">
   <div class="numbertext">3 / 3</div>
-  <img src="img_mountains_wide.jpg" style="width:100%">
+  <img src="assets\images\tandikan.jpeg" style="width:100%">
   <div class="text">Caption Three</div>
 </div>
 
