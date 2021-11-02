@@ -174,21 +174,33 @@ img {vertical-align: middle;}
 <div class="slideshow-container">
 
 <div class="mySlides fade">
-  <div class="numbertext">1 / 3</div>
+  <div class="numbertext">1 / 5</div>
   <img src="assets\images\its more fun in ppc city hall.jpeg" style="width:100%">
   <div class="text">City Hall</div>
 </div>
 
 <div class="mySlides fade">
-  <div class="numbertext">2 / 3</div>
+  <div class="numbertext">2 / 5</div>
   <img src="assets\images\yate view.jpeg" style="width:100%">
   <div class="text">Yate View</div>
 </div>
 
 <div class="mySlides fade">
-  <div class="numbertext">3 / 3</div>
+  <div class="numbertext">3 / 5</div>
   <img src="assets\images\tandikan.jpeg" style="width:100%">
   <div class="text">Tandikan</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">4 / 5</div>
+  <img src="assets\images\palawan flycatcher1.jpeg" style="width:100%">
+  <div class="text">Palawan Flycatcher</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">5 / 5</div>
+  <img src="assets\images\underground river.jpeg" style="width:100%">
+  <div class="text">Underground River</div>
 </div>
 
 </div>
@@ -198,6 +210,8 @@ img {vertical-align: middle;}
   <span class="dot"></span> 
   <span class="dot"></span> 
   <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span>
 </div>
 
 <script>
