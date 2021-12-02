@@ -1,9 +1,11 @@
-<?php
+<!-- <?php
 
 
-require_once 'db.php';
+/* require_once 'dbcon.php';
 
-$name = '' ;
+$fname = '' ;
+$mname = '' ;
+$lname = '' ;
 $email = '';
 $password = '';
 $confirm_password = '';
@@ -12,13 +14,16 @@ if( $_SERVER['REQUEST_METHOD'] == 'POST'){
 
   $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
   
-  $name = trim($_POST['name']);
+  $fname = trim($_POST['fname']);
+  $mname = trim($_POST['mname']);
+  $lname = trim($_POST['lname']);
   $email = trim($_POST['email']);
   $password = trim($_POST['password']);
   $confirm_password = trim($_POST['confirm_password']);
 
-  if(empty($name)){
-    $name_err = 'Please enter your name';
+  if(empty($fname)){
+    $fname_err = 'Please enter your first name';
+    $lname_err = 'Please enter your last name';
   }
 
 
@@ -57,18 +62,22 @@ if( $_SERVER['REQUEST_METHOD'] == 'POST'){
       $confirm_password_err = 'Passwords do not match';
     }
   }
-
+ */
   //inputs are okay to be saved to the database
-  if( empty($name_err) &&
+/*   if( empty($fname_err) &&
+      empty($mname_err) &&
+      empty($lname_err) &&
       empty($email_err) &&
       empty($password_err) &&
       empty($confirm_password_err))
   {
       $password = password_hash($password, PASSWORD_DEFAULT);
-      $sql = 'INSERT INTO users (name, email, password) VALUES (:name, :email, :password)';
+      $sql = 'INSERT INTO users (fname, mname, lname, email, password) VALUES (:fname, :mname, :lname, :email, :password)';
 
       if( $stmt = $pdo->prepare($sql)){
-        $stmt->bindParam(':name', $name, PDO::PARAM_STR);
+        $stmt->bindParam(':fname', $fname, PDO::PARAM_STR);
+        $stmt->bindParam(':mname', $mname, PDO::PARAM_STR);
+        $stmt->bindParam(':lname', $lname, PDO::PARAM_STR);
         $stmt->bindParam(':email', $email, PDO::PARAM_STR);
         $stmt->bindParam(':password', $password, PDO::PARAM_STR);
 
@@ -82,7 +91,7 @@ if( $_SERVER['REQUEST_METHOD'] == 'POST'){
       unset($stmt);
   }
   unset($pdo);
-}
+} */
 
 
 ?>
@@ -92,7 +101,8 @@ if( $_SERVER['REQUEST_METHOD'] == 'POST'){
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-    <link rel="shortcut icon" href="assets/images/ppc-logo.png"> 
+  <link rel="shortcut icon" href="assets/images/ppc-logo.png">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <title>RVMSC SchedSys | Signup</title>
 </head>
 <body style="background-image: url('assets/images/rvmsc_image00.jpg'); 
@@ -107,9 +117,19 @@ if( $_SERVER['REQUEST_METHOD'] == 'POST'){
         <p>Please fill this form to register with us</p>
           <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
             <div class="form-group">
-                <label>Name:<sup>*</sup></label>
-                <input type="text" name="name" class="form-control form-control-lg <?php echo (!empty($name_err)) ? 'is-invalid' : '';?>" value="<?php echo $name;?>">
-                <span class="invalid-feedback"><?php echo $name_err; ?></span>
+                <label>First Name:<sup>*</sup></label>
+                <input type="text" name="fname" class="form-control form-control-lg <?php echo (!empty($fname_err)) ? 'is-invalid' : '';?>" value="<?php echo $fname;?>">
+                <span class="invalid-feedback"><?php echo $fname_err; ?></span>
+            </div> 
+            <div class="form-group">
+                <label>Middle Name: (if applicable)</label>
+                <input type="text" name="mname" class="form-control form-control-lg <?php echo (!empty($mname_err)) ? 'is-invalid' : '';?>" value="<?php echo $mname;?>">
+                <span class="invalid-feedback"><?php echo $mname_err; ?></span>
+            </div> 
+            <div class="form-group">
+                <label>Last Name:<sup>*</sup></label>
+                <input type="text" name="lname" class="form-control form-control-lg <?php echo (!empty($lname_err)) ? 'is-invalid' : '';?>" value="<?php echo $lname;?>">
+                <span class="invalid-feedback"><?php echo $lname_err; ?></span>
             </div> 
             <div class="form-group">
                 <label>Email Address:<sup>*</sup></label>
@@ -142,3 +162,4 @@ if( $_SERVER['REQUEST_METHOD'] == 'POST'){
 </div>    
 </body>
 </html>
+ -->

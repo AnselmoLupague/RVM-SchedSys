@@ -1,0 +1,114 @@
+* {
+  font-size: 14px;
+  line-height: 2;
+}
+
+  #gradbg-wb {
+    background-color: white;
+    background-image: linear-gradient(white, #0275d8);
+  }
+
+  body {
+    font-family: Verdana, sans-serif;
+  }
+
+  img {
+    vertical-align: middle;
+  }
+  
+  .mySlides {
+    display: none;
+  }
+
+  .slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+  }
+
+  .dot {
+    height: 10px;
+    width: 10px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+  }
+
+  .fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 2s;
+    animation-name: fade;
+    animation-duration: 2s;
+  }
+
+  @keyframes fade {
+    from {opacity: .5} 
+    to {opacity: 1}
+  }
+
+  @media only screen and (max-width: 300px) {
+    .text {font-size: 11px}
+}
+
+  .card {
+    background-color: transparent !important;
+    opacity: 1;
+    transition: 0.3s;
+  }
+
+  .card:hover {
+    opacity: 0.6;
+  }
+
+  .card-img-top {
+    height: auto;
+    width: 15vw;
+    object-fit: cover;
+  }
+
+  .card-text {
+    color: white;
+    text-decoration: solid;
+    font-size: large;
+    text-align: center;
+  }
+
+  .card-au {
+    height: auto;
+    width: 15vw;
+  }
+
+  .image__img {
+    height: auto;
+    width: auto;
+    object-fit: cover;
+  }
+  
+  .active {
+    background-color: transparent;
+  }
+
+  .active:hover {
+    text-decoration: none;
+  }
+
+  footer {
+    clear: both;
+    position: relative;
+  }
+
+  .image__img {
+    width: 100%;
+    height: 80%;
+  }
+
+  .card-tittle{
+    font-family: 'Quicksand';
+    display: flex;
+    color: #000000;
+    flex-direction: column;
+    align-items: center;
+    font-size: 2em;  
+  }

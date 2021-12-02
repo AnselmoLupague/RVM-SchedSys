@@ -1,0 +1,22 @@
+.card{
+    width: 30%;
+    height: 50%;
+    border-radius: 30px;
+    display: inline-block;
+}
+.card-tittle{
+    color: #000000;
+    font-family: 'Quicksand', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5em;  
+}
+
+.image__img {
+    border-radius: 30px;
+    width: 85%;
+    height: 85%;
+    margin: auto;
+    display: block;
+}

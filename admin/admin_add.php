@@ -1,0 +1,60 @@
+<?php
+    session_start();
+    include_once('../dbcon.php');
+
+    if(isset($_POST['adminadd'])) {
+        $title = $_POST['title'];
+        $description = $_POST['descr'];
+        $facility_name = $_POST['facility_name'];
+        $num_participants = $_POST['numParticipants'];
+        $timedate = $_POST['timedate'];
+        $rname = $_POST['rname'];
+        $email_grp = $_POST['email'];
+        $con_num = $_POST['contact'];
+        $remarks = $_POST['remark'];
+
+        $file = $_FILES['fileToUpload']['tmp_name'];
+
+        $fileName =  $_FILES['fileToUpload']['name'];
+        $fileTmpName =  $_FILES['fileToUpload']['tmp_name'];
+        $fileSize =  $_FILES['fileToUpload']['size'];
+        $fileError =  $_FILES['fileToUpload']['error'];
+        $fileType =  $_FILES['fileToUpload']['type'];
+
+        $fileExt = explode('.', $fileName);
+        $fileActualExt = strtolower(end($fileExt));
+
+        $allowed = array('doc', 'docx', 'pdf', );
+
+        if (in_array($fileActualExt, $allowed)) {
+            if ($fileError === 0) {
+                if ($fileSize < 1000000) {
+                    $fileNameNew = $title.".".$fileActualExt;
+                    $fileDestination = '../upload/'.$fileNameNew;
+                    move_uploaded_file($fileTmpName, $fileDestination);
+
+                    $query = "INSERT INTO group_requests (title, desc_grp, facility_use, num_par, event_dt, req_name, email_add, con_num, doc_upl, remarks)
+                    VALUES ('$title', '$description', '$facility_name', '$num_participants', '$timedate', '$rname', '$email_grp', '$con_num', '$fileNameNew', '$remarks')";
+
+                    $query_run = mysqli_query($conn, $query);
+
+                        if ($query_run) {
+                            $_SESSION['status'] = "<h3 align='center' style='color:green'>"."Submitted Successfully!"."</h3>";
+                            header ("Location: add.php");
+                        }
+                } else {
+                    $_SESSION['status'] = "<h3 align='center' style='color:red'>"."Your file is too big."."</h3>";
+                    header ("Location: add.php");
+                }
+            } else {
+                $_SESSION['status'] = "<h3 align='center' style='color:red'>"."There was an error uploading your file.."."</h3>";
+                header ("Location: add.php");
+            }
+        } else {
+            $_SESSION['status'] = "<h3 align='center' style='color:red'>"."You can not upload file of this type."."</h3>";
+            header ("Location: add.php");
+        }
+    } else {
+        echo "Error";
+    }
+?>
