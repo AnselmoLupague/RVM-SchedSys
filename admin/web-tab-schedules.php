@@ -108,7 +108,8 @@
 					<th scope="col">Email</th>
 					<th scope="col">Contact Number</th>
 					<th scope="col">Facility</th>
-					<th scope="col">Date Picked (date/time)</th>
+					<th scope="col">Date Picked</th>
+					<th scope="col">Time</th>
 					<th scope="col">ID Picture</th>
 					<th scrope="col">Remarks</th>
 					<th scrope="col">Edit</th>
@@ -129,7 +130,8 @@
 							<td><?php echo $row['ind_email']?></td>
 							<td><?php echo $row['contact_num']?></td>
 							<td><?php echo $row['facility'];?></td>
-							<td><?php echo $row['eventdt']?></td>
+							<td><?php echo date('m/d/Y', strtotime($row['eventdt']))?></td>
+							<td><?php echo date('h:i A', strtotime($row['start_time']))." - ".date('h:i A', strtotime($row['end_time']))?></td>
 							<td><?php echo '<img src="data:image;base64,'.base64_encode($row['img_id']).'"alt=image" style="width: 100px; height: 100px">'?></td>
 							<td><?php echo $row['remarks']?></td>
 							<td>

@@ -112,3 +112,25 @@
     align-items: center;
     font-size: 2em;  
   }
+
+  .column {
+    float: left;
+    width: 50%;
+    padding: 10px;
+  }
+
+  .icon-gym {
+    color: #DC143C;
+}
+
+.icon-basketball {
+  color: #FF781F;
+}
+
+.icon-swimpool {
+  color: #1AA7EC;
+}
+
+.icon-volleyball {
+  color: #FFE800;
+}

@@ -1,10 +1,10 @@
 <?php
-define('DB_SERVER', 'fdb27.biz.nf');
-define('DB_USERNAME', '3790681_rvmsc');
-define('DB_PASSWORD', 'lJP-wgGI0x[-q.Zp');
-define('DB_NAME', '3790681_rvmsc');
+define('DB_SERVER', 'localhost');
+define('DB_USERNAME', 'root');
+define('DB_PASSWORD', '');
+define('DB_NAME', 'phpmyadmin');
 
-$conn = new mysqli('fdb27.biz.nf','3790681_rvmsc','lJP-wgGI0x[-q.Zp','3790681_rvmsc');
+$conn = new mysqli('localhost','root','','phpmyadmin');
 if ($conn->connect_error) {
     die('Error : ('. $conn->connect_errno .') '. $conn->connect_error);
 }

@@ -1,9 +1,9 @@
 <?php 
-session_start();
+  session_start();
 
-if (!isset($_SESSION["staff"])) {
-  header ("Location: admin/login.php");
-}
+  if (!isset($_SESSION["admin"])) {
+    header ("Location: login.php");
+  }
 ?>
 
 <html> 
@@ -65,25 +65,25 @@ if (!isset($_SESSION["staff"])) {
 			<div id="navigation" class="collapse navbar-collapse flex-column">
 				<div class="profile-section pt-3 pt-lg-0">
 				    <img class="profile-image mb-3 rounded-circle mx-auto" src="assets/images/ppc-logo.png" alt="image" >			
-					<h4><?php echo "Staff"; ?></h4>
+					<h4><?php echo "Admin"; ?></h4>
 			        <hr> 
 				</div><!--//profile-section-->
 				
 				<ul class="navbar-nav flex-column text-left">
                 <li class="nav-item">
-					    <a class="nav-link" href="staff_page.php"><i class="fa fa-home"></i> Home<span class="sr-only"></span></a>
-					</li>
-
-					<li class="nav-item active">
-					    <a class="nav-link" href="add_staff.php"><i class="fa fa-plus"></i>	Add<span class="sr-only"></span></a>
+					    <a class="nav-link" href="index.php"><i class="fa fa-home"></i> Home<span class="sr-only"></span></a>
 					</li>
 
 					<li class="nav-item">
-					    <a class="nav-link" i="fa" href="requests.php"><i class="fa fa-envelope"></i>	Requests<span class="sr-only">(current)</span></a>
+					    <a class="nav-link" href="add.php"><i class="fa fa-plus"></i>	Add<span class="sr-only"></span></a>
 					</li>
 
 					<li class="nav-item">
-					    <a class="nav-link" href="admin/logout.php"><i class="fa fa-sign-out-alt"></i>	Logout<span class="sr-only"></span></a>
+					    <a class="nav-link" i="fa" href="web-tab-schedules.php"><i class="fa fa-edit"></i>	Update<span class="sr-only">(current)</span></a>
+					</li>
+
+					<li class="nav-item">
+					    <a class="nav-link" href="logout.php"><i class="fa fa-sign-out-alt"></i>	Logout<span class="sr-only"></span></a>
 					</li>
 
 				</ul>
@@ -108,9 +108,9 @@ if (!isset($_SESSION["staff"])) {
 			</div><!--Sports Facility-->
 		    <div class="container">
 			
-			<div class="card card-body mt-3 mb-3 ml-3 mr-3" id="skybluebg">
+			<div class="card card-body" id="skybluebg">
         	<h2 align="center">Add Schedule</h2>
-            <form action="addstaff_group.php" method="post" enctype="multipart/form-data">
+            <form action="create.php" method="post" enctype="multipart/form-data">
               <div class="form-group col-md-6">
                 <div class="form-group">
                     <label>Title:<span style="color:red;"><sup>*</sup></span></label>
@@ -123,63 +123,32 @@ if (!isset($_SESSION["staff"])) {
                     <span class="invalid-feedback"></span>
                 </div> 
                 <div class="form-group">
-                    <label>Facility Use:<span style="color:red;"><sup>*</sup></span></label><br>
-                    <select name="facility name" class="form-control-lg" value="" required>
+                    <label>Facility:<span style="color:red;"><sup>*</sup></span></label><br>
+                    <select name="facility" class="form-control-lg" value="" required>
 					<option value="">--SELECT FACILITY--</option>
-						<option value="Basketball">Basketball</option>
-						<option value="Gym">Gym</option>
-						<option value="Swimming Pool">Swimming Pool</option>
-						<option value="Volleyball">Volleyball</option>
+						<option value="#FF781F">Basketball</option>
+						<option value="#DC143C">Gym</option>
+						<option value="#1AA7EC">Swimming Pool</option>
+						<option value="#FFE800">Volleyball</option>
                     </select>
-                    <span class="invalid-feedback"></span>
-                </div> 
-                <div class="form-group">
-                    <label>Number of Participants:<span style="color:red;"><sup>*</sup></span></label><br>
-                    
-                    <input type="number" name="numParticipants" oninput="this.value=this.value.slice(0,this.maxLength)" class="form-control-lg" value="" maxlength="2" required >
                     <span class="invalid-feedback"></span>
                 </div> 
 				<div class="form-group">
 					<label for="timedate">Schedule (date and time):<span style="color:red;"><sup>*</sup></span></label><br>
-					<label>Date</label>
-					<input type="date" name="date" class="form-control-lg" value="" required><br>
 					<label>Start</label>
-					<input type="time" name="start" class="form-control-lg" value="" required><br>
+					<input type="datetime-local" name="start" class="form-control-lg" value="" required><br>
 					<label>End&nbsp;&nbsp;</label>
-					<input type="time" name="end" class="form-control-lg" value="" required>
+					<input type="datetime-local" name="end" class="form-control-lg" value="" required>
 				</div>
-            </div>
-            <div class="form-group col-md-6">
-                <div class="form-group">
-                    <label>Requester Name (e.g. Juan Dela Cruz):<span style="color:red;"><sup>*</sup></span></label>
-                    <input type="text" name="rname" class="form-control form-control-lg" value="" required>
-                    <span class="invalid-feedback"></span>
-                </div> 
-                <div class="form-group">
-                    <label>Email Address:<span style="color:red;"><sup>*</sup></span></label>
-                    <input type="email" name="email" class="form-control form-control-lg" value="" required>
-                    <span class="invalid-feedback"></span>
-                </div> 
-                <div class="form-group">
-                    <label>Contact Number:<span style="color:red;"><sup>*</sup></span></label>
-                    <input type="number" name="contact" class="form-control form-control-lg" oninput="this.value=this.value.slice(0,this.maxLength)" maxlength="11" value="">
-                    <span class="invalid-feedback"></span>
-                </div>
-                
-                <div class="form-group">
-                    <form action="upload.php" method="post" enctype="multipart/form-data">
-                    <label for="fileToUpload">Insert request letter:<span style="color:red;"><sup>*</sup></span></label>
-                    <input type="file" name="fileToUpload" id="fileToUpload">
-                </div>
             <div class="col" align="right">
-                <input type="submit" name="add" class="btn btn-primary btn-block" style="height:40px; width:200px" value="Submit">
+                <input type="submit" name="create" class="btn btn-primary btn-block" style="height:40px; width:200px" value="Submit">
             </div>
             <?php
 			if(isset($_SESSION['status'])) {
 				echo $_SESSION['status'];
 				unset($_SESSION['status']);
 			}
-            ?>
+		?>
           	</form>
               </div>
         	</div>

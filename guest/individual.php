@@ -9,7 +9,9 @@
         $ind_email = $_POST['ind_email'];
         $contact_num = $_POST['contact_num'];
         $facility_name = $_POST['facility'];
-        $ind_time = $_POST['ind_time'];
+        $date = $_POST['date'];
+        $start = $_POST['start'];
+        $end = $_POST['end'];
 
         $file = addslashes(file_get_contents($_FILES['fileToUpload']['tmp_name']));
 
@@ -31,8 +33,8 @@
                     $fileDestination = '../upload/'.$fileNameNew;
                     move_uploaded_file($fileTmpName, $fileDestination);
 
-                    $query = "INSERT INTO individual_requests (fname, mname, lname, ind_email, contact_num, facility, eventdt, img_id)
-                    VALUES ('$fname', '$mname', '$lname', '$ind_email', '$contact_num', '$facility_name', '$ind_time', '$file')";
+                    $query = "INSERT INTO individual_requests (fname, mname, lname, ind_email, contact_num, facility, eventdt, start_time, end_time, img_id)
+                    VALUES ('$fname', '$mname', '$lname', '$ind_email', '$contact_num', '$facility_name', '$date', '$start','$end','$file')";
 
                     $query_run = mysqli_query($conn, $query);
 

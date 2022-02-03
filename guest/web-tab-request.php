@@ -156,8 +156,12 @@
 				</div> 
 				<div class="form-group">
 					<label for="timedate">Schedule (date and time):<span style="color:red;"><sup>*</sup></span></label><br>
-					<input type="datetime-local" name="ind_time" class="form-control-lg" value="" required>
-					<span class="invalid-feedback"></span>
+					<label>Date</label>
+					<input type="date" name="date" class="form-control-lg" value="" required><br>
+					<label>Start</label>
+					<input type="time" name="start" class="form-control-lg" value="" required><br>
+					<label>End&nbsp;&nbsp;</label>
+					<input type="time" name="end" class="form-control-lg" value="" required>
 				</div>
 				<div class="form-group">
 					<label for="fileToUpload">Insert your ID image:<span style="color:red;"><sup>*</sup></span></label>

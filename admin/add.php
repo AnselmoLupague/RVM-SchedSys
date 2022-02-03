@@ -119,16 +119,17 @@
                 </div> 
                 <div class="form-group">
                     <label>Description:<span style="color:red;"><sup>*</sup></span></label>
-                    <input type="text" name="Description" class="form-control form-control-lg" value="" required>
+                    <input type="text" name="descr" class="form-control form-control-lg" value="" required>
                     <span class="invalid-feedback"></span>
                 </div> 
                 <div class="form-group">
                     <label>Facility Use:<span style="color:red;"><sup>*</sup></span></label><br>
                     <select name="facility name" class="form-control-lg" value="" required>
-                        <option>Basketball</option>
-                        <option>Gym</option>
-                        <option>Swimming Pool</option>
-                        <option>Volleyball</option>
+					<option value="">--SELECT FACILITY--</option>
+						<option value="Basketball">Basketball</option>
+						<option value="Gym">Gym</option>
+						<option value="Swimming Pool">Swimming Pool</option>
+						<option value="Volleyball">Volleyball</option>
                     </select>
                     <span class="invalid-feedback"></span>
                 </div> 
@@ -138,11 +139,15 @@
                     <input type="number" name="numParticipants" oninput="this.value=this.value.slice(0,this.maxLength)" class="form-control-lg" value="" maxlength="2" required >
                     <span class="invalid-feedback"></span>
                 </div> 
-                <div class="form-group">
-                    <label for="timedate">Schedule (date and time):<span style="color:red;"><sup>*</sup></span></label>
-                    <input type="datetime-local" id="timedate" name="timedate" class="form-control form-control-lg" value="" required>
-                    <span class="invalid-feedback"></span>
-                </div>
+				<div class="form-group">
+					<label for="timedate">Schedule (date and time):<span style="color:red;"><sup>*</sup></span></label><br>
+					<label>Date</label>
+					<input type="date" name="date" class="form-control-lg" value="" required><br>
+					<label>Start</label>
+					<input type="time" name="start" class="form-control-lg" value="" required><br>
+					<label>End&nbsp;&nbsp;</label>
+					<input type="time" name="end" class="form-control-lg" value="" required>
+				</div>
             </div>
             <div class="form-group col-md-6">
                 <div class="form-group">
@@ -157,7 +162,7 @@
                 </div> 
                 <div class="form-group">
                     <label>Contact Number:<span style="color:red;"><sup>*</sup></span></label>
-                    <input type="text" name="contact" class="form-control form-control-lg" value="">
+                    <input type="number" name="contact" class="form-control form-control-lg" oninput="this.value=this.value.slice(0,this.maxLength)" maxlength="11" value="">
                     <span class="invalid-feedback"></span>
                 </div>
                 

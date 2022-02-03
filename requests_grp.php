@@ -99,10 +99,12 @@ if (!isset($_SESSION["staff"])) {
 					<th scope="col">Facility</th>
 					<th scope="col">No. of Participants</th>
 					<th scope="col">Date of Event</th>
+					<th scope="col">Time</th>
 					<th scope="col">Requester Name</th>
 					<th scope="col">Email</th>
 					<th scrope="col">Contact Number</th>
                     <th scrope="col">Remarks</th>
+					<th scrope="col">Send</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -113,12 +115,13 @@ if (!isset($_SESSION["staff"])) {
 					while ($row = mysqli_fetch_array($sql)) {
 						?>
 						<tr>
-							<td><?php echo $row['date_createdgrp']?></td>
+							<td><?php echo date('m/d/Y', strtotime($row['date_createdgrp']))?></td>
 							<td><?php echo $row['title']?></td>
 							<td><?php echo $row['desc_grp']?></td>
 							<td><?php echo $row['facility_use']?></td>
 							<td><?php echo $row['num_par']?></td>
-							<td><?php echo $row['event_dt']?></td>
+							<td><?php echo date('m/d/Y', strtotime($row['event_dt']))?></td>
+							<td><?php echo date('h:i A', strtotime($row['start_grp']))." - ".date('h:i A', strtotime($row['end_grp']))?></td>
 							<td><?php echo $row['req_name'];?></td>
 							<td><?php echo $row['email_add']?></td>
                             <td><?php echo $row['con_num']?></td>
@@ -127,6 +130,19 @@ if (!isset($_SESSION["staff"])) {
 							} else {
 								echo $row['remarks'];
 							}?></td>
+								<td><form action="send.php" method="post">
+								<input type="hidden" name="email" value="<?php echo $row['email_add']?>">
+								<input type="hidden" name="lastname" value="<?php echo $row['req_name']?>">
+								<input type="hidden" name="facilityname" value="<?php echo $row['facility_use']?>">
+								<input type="hidden" name="eventdate" value="<?php echo $row['event_dt']?>">
+								<input type="hidden" name="start" value="<?php echo $row['start_grp']?>">
+								<input type="hidden" name="end" value="<?php echo $row['end_grp']?>">
+								<input type="hidden" name="remarks" value="<?php echo $row['remarks']?>">
+								<input type="hidden" name="contact_num" value="<?php echo $row['con_num']?>">
+								<input type="submit" name="send" class="btn btn-success" value="Send">
+								<br>
+							</form>
+							</td>
 						</tr>
 						<?php
 					}

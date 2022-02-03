@@ -145,9 +145,13 @@
 					<span class="invalid-feedback"></span>
 				</div> 
 				<div class="form-group">
-					<label for="timedate">Schedule (date and time):<span style="color:red;"><sup>*</sup></span></label>
-					<input type="datetime-local" id="timedate" name="timedate" class="form-control form-control-lg" value="" required>
-					<span class="invalid-feedback"></span>
+					<label for="timedate">Schedule (date and time):<span style="color:red;"><sup>*</sup></span></label><br>
+					<label>Date</label>
+					<input type="date" name="date" class="form-control-lg" value="" required><br>
+					<label>Start</label>
+					<input type="time" name="start" class="form-control-lg" value="" required><br>
+					<label>End&nbsp;&nbsp;</label>
+					<input type="time" name="end" class="form-control-lg" value="" required>
 				</div>
 			</div>
 			<div class="form-group col-md-6">

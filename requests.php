@@ -107,9 +107,10 @@ if (!isset($_SESSION["staff"])) {
 					<th scope="col">Email</th>
 					<th scope="col">Contact Number</th>
 					<th scope="col">Facility</th>
-					<th scope="col">Date Picked (date/time)</th>
+					<th scope="col">Date Picked</th>
+					<th scope="col">Time</th>
 					<th scrope="col">Remarks</th>
-					<th scrope="col">Send to Requester</th>
+					<th scrope="col">Send</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -127,7 +128,8 @@ if (!isset($_SESSION["staff"])) {
 							<td><?php echo $row['ind_email']?></td>
 							<td><?php echo $row['contact_num']?></td>
 							<td><?php echo $row['facility'];?></td>
-							<td><?php echo $row['eventdt']?></td>
+							<td><?php echo date('m/d/Y', strtotime($row['eventdt']))?></td>
+							<td><?php echo date('h:i A', strtotime($row['start_time']))." - ".date('h:i A', strtotime($row['end_time']));?></td>
 							<td><?php if (!$row['remarks']) {
 								echo "<h4 align='center' style='color:blue;'>"."Pending"."</h4>";
 							} else {
@@ -138,6 +140,8 @@ if (!isset($_SESSION["staff"])) {
 								<input type="hidden" name="lastname" value="<?php echo $row['lname']?>">
 								<input type="hidden" name="facilityname" value="<?php echo $row['facility']?>">
 								<input type="hidden" name="eventdate" value="<?php echo $row['eventdt']?>">
+								<input type="hidden" name="start" value="<?php echo $row['start_time']?>">
+								<input type="hidden" name="end" value="<?php echo $row['end_time']?>">
 								<input type="hidden" name="remarks" value="<?php echo $row['remarks']?>">
 								<input type="hidden" name="contact_num" value="<?php echo $row['contact_num']?>">
 								<input type="submit" name="send" class="btn btn-success" value="Send">

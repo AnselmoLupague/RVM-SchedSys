@@ -102,11 +102,12 @@
   			<thead class="thead-dark">
   				<tr>
 					<th scope="col">Date Created</th>
-					<th scope="col">Title</th>
+					<th scope="col">Title of Event</th>
 					<th scope="col">Description</th>
 					<th scope="col">Facility</th>
-					<th scope="col">Number of Participants</th>
-					<th scope="col">Date of the Event</th>
+					<th scope="col">No. of Participants</th>
+					<th scope="col">Date</th>
+					<th scope="col">Time</th>
 					<th scope="col">Requester Name</th>
 					<th scope="col">Email</th>
 					<th scope="col">Contact Number</th>
@@ -123,12 +124,13 @@
 					while ($row = mysqli_fetch_array($sql)) {
 						?>
 						<tr>
-							<td><?php echo $row['date_createdgrp']?></td>
+							<td><?php echo date('m/d/Y', strtotime($row['date_createdgrp']))?></td>
 							<td><?php echo $row['title']?></td>
 							<td><?php echo $row['desc_grp']?></td>
 							<td><?php echo $row['facility_use']?></td>
 							<td><?php echo $row['num_par']?></td>
-							<td><?php echo $row['event_dt']?></td>
+							<td><?php echo date('m/d/Y', strtotime($row['event_dt']))?></td>
+							<td><?php echo date('h:i A', strtotime($row['start_grp']))." - ".date('h:i A', strtotime($row['end_grp']))?></td>
 							<td><?php echo $row['req_name'];?></td>
 							<td><?php echo $row['email_add']?></td>
 							<td><?php echo $row['con_num']?></td>

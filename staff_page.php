@@ -35,7 +35,7 @@ $query = $conn->query("SELECT * FROM events ORDER BY id");
        center:'title',
        right:'month,agendaWeek,agendaDay'
       },
-      events: [<?php while ($row = $query ->fetch_object()) { ?>{ id : '<?php echo $row->id; ?>', title : '<?php echo $row->title; ?>', start : '<?php echo $row->start_event; ?>', end : '<?php echo $row->end_event; ?>', }, <?php } ?>],
+      events: [<?php while ($row = $query ->fetch_object()) { ?>{ id : '<?php echo $row->id; ?>', title : '<?php echo $row->title; ?>', start : '<?php echo $row->start_event; ?>', end : '<?php echo $row->end_event; ?>',color : '<?php echo $row->color_evt; ?>', }, <?php } ?>],
       selectable:true,
       selectHelper:true,
       select: function(start, end, allDay)
@@ -185,6 +185,25 @@ $query = $conn->query("SELECT * FROM events ORDER BY id");
 			</div><!--Sports Facility-->
         <section class="cta-section py-5">
         <br />
+        <div class="row">
+          <div class="column">
+          <ul class="list-group-flush">
+            <li class="list-group-item"><i class="fas fa-bookmark fa-1x amber-text pr-1 icon-gym" aria-hidden="true"></i>Gym |
+            <i class="fas fa-bookmark fa-1x amber-text pr-1 icon-basketball" aria-hidden="true"></i>Basketball |
+            <i class="fas fa-bookmark fa-1x amber-text pr-1 icon-swimpool" aria-hidden="true"></i>Swimming Pool |
+            <i class="fas fa-bookmark fa-1x amber-text pr-1 icon-volleyball" aria-hidden="true"></i>Volleyball</li>
+            <form action="addEvent.php" method="POST">
+              <input type="submit" class="btn btn-success" value="Add Event">
+          </form>
+          </ul>  
+          </div>
+        </div>
+        <?php
+			if(isset($_SESSION['status'])) {
+				echo $_SESSION['status'];
+				unset($_SESSION['status']);
+			}
+		?>
             <h1 align="center">Calendar Schedule</h1>
         <br />
             <div class="container">
